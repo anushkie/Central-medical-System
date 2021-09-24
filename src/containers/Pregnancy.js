@@ -11,27 +11,43 @@ import {
 import { Card, Col, Row } from "antd";
 import { Button } from "antd";
 import { RightCircleFilled } from "@ant-design/icons";
-import TheLayout2 from "./TheLayout2";
+import GenericLayout from "./GenericLayout";
 
 const placements = ["top-end"];
 
 const Pregnancy = () => {
   return (
-    <TheLayout2>
+    <GenericLayout>
       <div className=" margin-top w-100 text-center mb-3 ">
         <h2>Pregnancy</h2>
       </div>
       <div className="my-0">
         {placements.map((placement) => {
           return (
-            <CCol md="4" className="py-4 text-center" key={placement}>
-              <CTooltip
-                content={`Labour Pain? Call on 1231234`}
-                placement={placement}
-              >
-                <CButton color="primary">{"Emergency"}</CButton>
-              </CTooltip>
-            </CCol>
+            <div className="row">
+              <div className="col-md-4"></div>
+              <div className="col-md-4">
+                <center>
+                  <CTooltip
+                    content={`Labour Pain? Call on 1231234`}
+                    placement={placement}
+                  >
+                    <CButton color="primary">{"Emergency"}</CButton>
+                  </CTooltip>
+                </center>
+              </div>
+
+              <div className="col-md-4"></div>
+            </div>
+
+            // <CCol md="4" className="py-4 text-center" key={placement}>
+            //   <CTooltip
+            //     content={`Labour Pain? Call on 1231234`}
+            //     placement={placement}
+            //   >
+            //     <CButton color="primary">{"Emergency"}</CButton>
+            //   </CTooltip>
+            // </CCol>
           );
         })}
       </div>
@@ -192,7 +208,7 @@ const Pregnancy = () => {
         </Row>
       </div>
       ,
-    </TheLayout2>
+    </GenericLayout>
   );
 };
 export default Pregnancy;

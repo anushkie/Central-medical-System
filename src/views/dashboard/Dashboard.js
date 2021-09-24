@@ -47,9 +47,23 @@ const handleChange = (value) => {
   console.log("Selected value:", value);
 };
 
-const text = `
-  Some news ... some news
+const text1 = `
+: A defunct luxury hotel in Cambodia's capital finished conversion into a 500-room coronavirus hospital on Monday (Mar 8), as authorities enforced a new law imposing criminal punishments for violating health rules and infections continued to rise in the Southeast Asian country.
+
+The Great Duke Phnom Penh has not been in operation for two years, and is now set up to treat virus patients amid a third wave of the pandemic in Cambodia. 
+
+Prime Minister Hun Sen assigned General Hun Manet, his eldest son and a powerful army chief, to lead the two-day effort to turn the hotel into a temporary hospital.
 `;
+
+const text2 = `
+Kantha Bopha installed a unit focusing on pediatric cardiac surgery and interventional cardiology in Siem Reap in 2011. Over the past nine years, the hospital’s surgeons have regularly used cardiac catheterization to diagnose and treat cardiovascular conditions such as septal defects, or “hole in the heart,” coarctation of the aorta, which is when the body’s main artery is narrower than normal, and underdeveloped hearts, which is when the organ struggles to pump enough blood to the lungs or around the body.`;
+
+const text3 = `
+The Ministry of Health of Cambodia (MoH) has permitted registered private hospitals in Phnom Penh capital to treat COVID-19 patients.
+
+According to the ministry’s announcement dated April 25, the interested private hospitals must request for a legal permission from the Ministry of Health through the Department of Hospital Services.
+
+The hospitals considered qualified for the treatment of coronavirus patients are those with adequate location and parking, ambulances with enough medical equipment, appropriate and safe patient rooms, and emergency room with adequate medical materials.`;
 
 const Dashboard = () => {
   const [visible1, updateVisibility1] = React.useState(false);
@@ -103,15 +117,13 @@ const Dashboard = () => {
               style={{ width: 240 }}
               onChange={handleChange}
             >
-              <Option value="Andaman and Nicobar Islands">
-                {" "}
-                Andaman and Nicobar Islands
-              </Option>
-              <Option value="Andhra Pradesh"> Andhra Pradesh </Option>
-              <Option value="Arunachal Pradesh">Arunachal Pradesh</Option>
-              <Option value="Assam">Assam</Option>
-              <Option value="Bihar">Bihar</Option>
-              <Option value="Chandigarh">Chandigarh</Option>
+              <Option value="India"> India</Option>
+              <Option value="Africa"> Africa </Option>
+              <Option value="Bangladesh ">Bangladesh</Option>
+              <Option value="Cambodia">Cambodia</Option>
+              <Option value="Bhutan">Bhutan</Option>
+              <Option value="Pakistan">Pakistan</Option>
+              <Option value="Pakistan">Brazil</Option>
             </Select>
 
             <div className="d-inline-flex">
@@ -121,15 +133,12 @@ const Dashboard = () => {
                 style={{ width: 240 }}
                 onChange={handleChange}
               >
-                <Option value="Andaman and Nicobar Islands">
-                  {" "}
-                  Andaman and Nicobar Islands
-                </Option>
-                <Option value="Andhra Pradesh"> Andhra Pradesh </Option>
-                <Option value="Arunachal Pradesh">Arunachal Pradesh</Option>
-                <Option value="Assam">Assam</Option>
-                <Option value="Bihar">Bihar</Option>
-                <Option value="Chandigarh">Chandigarh</Option>
+                <Option value="India"> Phnom Penh.</Option>
+                <Option value="Africa"> Banteay Meanchey </Option>
+                <Option value="Bangladesh ">Battambang</Option>
+                <Option value="Cambodia">Kampong</Option>
+                <Option value="Bhutan">Cham</Option>
+                <Option value="Pakistan">Kampong</Option>
               </Select>
             </div>
           </div>
@@ -336,14 +345,25 @@ const Dashboard = () => {
             </CCardHeader>
             <CCardBody>
               <Collapse defaultActiveKey={["1"]} onChange={callback}>
-                <Panel header="This is panel header 1" key="1">
-                  <p>{text}</p>
+                <Panel
+                  header=" Cambodia turns hotel into hospital as COVID-19 cases rise"
+                  key="1"
+                >
+                  <p>{text1}</p>
                 </Panel>
-                <Panel header="This is panel header 2" key="2">
-                  <p>{text}</p>
+                <Panel
+                  header="Legendary Children’s Hospital In Cambodia Is Now Using MRI For Young Cardiac Patients"
+                  key="2"
+                >
+                  <p>{text2}</p>
                 </Panel>
-                <Panel header="This is panel header 3" key="3">
-                  <p>{text}</p>
+                <Panel
+                  header="Cambodia allows private hospitals in Phnom Penh to treat COVID-19 patients
+
+"
+                  key="3"
+                >
+                  <p>{text3}</p>
                 </Panel>
               </Collapse>
             </CCardBody>
@@ -499,16 +519,30 @@ const Dashboard = () => {
                       <strong>10 sec ago</strong>
                     </td>
                     <td>
-                      {/* <Popover
-                        content={<a onClick={this.hide}>Close</a>}
-                        title="Title"
+                      <Popover
+                        content={
+                          <>
+                            <center>
+                              <Input placeholder="Type here.." />
+                              <a color onClick={hide1}>
+                                High BP
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Urgent!
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Help!
+                              </a>{" "}
+                            </center>
+                          </>
+                        }
+                        title="Message"
                         trigger="click"
-                        visible={this.state.visible}
-                        onVisibleChange={this.handleVisibleChange}
+                        visible={visible1}
+                        onVisibleChange={handleVisibleChange1}
                       >
                         <Button type="primary">Click me</Button>
-                      </Popover> */}{" "}
-                      Message
+                      </Popover>
                     </td>
                   </tr>
 
@@ -541,16 +575,30 @@ const Dashboard = () => {
                       <strong>5 minutes ago</strong>
                     </td>
                     <td>
-                      {/* <Popover
-                        content={<a onClick={this.hide}>Close</a>}
-                        title="Title"
+                      <Popover
+                        content={
+                          <>
+                            <center>
+                              <Input placeholder="Type here.." />
+                              <a color onClick={hide1}>
+                                High BP
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Urgent!
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Help!
+                              </a>{" "}
+                            </center>
+                          </>
+                        }
+                        title="Message"
                         trigger="click"
-                        visible={this.state.visible}
-                        onVisibleChange={this.handleVisibleChange}
+                        visible={visible1}
+                        onVisibleChange={handleVisibleChange1}
                       >
                         <Button type="primary">Click me</Button>
-                      </Popover> */}{" "}
-                      Message
+                      </Popover>
                     </td>
                   </tr>
 
@@ -586,16 +634,30 @@ const Dashboard = () => {
                     </td>
 
                     <td>
-                      {/* <Popover
-                        content={<a onClick={this.hide}>Close</a>}
-                        title="Title"
+                      <Popover
+                        content={
+                          <>
+                            <center>
+                              <Input placeholder="Type here.." />
+                              <a color onClick={hide1}>
+                                High BP
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Urgent!
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Help!
+                              </a>{" "}
+                            </center>
+                          </>
+                        }
+                        title="Message"
                         trigger="click"
-                        visible={this.state.visible}
-                        onVisibleChange={this.handleVisibleChange}
+                        visible={visible1}
+                        onVisibleChange={handleVisibleChange1}
                       >
                         <Button type="primary">Click me</Button>
-                      </Popover> */}{" "}
-                      Message
+                      </Popover>
                     </td>
                   </tr>
 
@@ -629,16 +691,30 @@ const Dashboard = () => {
                       <strong>Last month</strong>
                     </td>
                     <td>
-                      {/* <Popover
-                        content={<a onClick={this.hide}>Close</a>}
-                        title="Title"
+                      <Popover
+                        content={
+                          <>
+                            <center>
+                              <Input placeholder="Type here.." />
+                              <a color onClick={hide1}>
+                                High BP
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Urgent!
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Help!
+                              </a>{" "}
+                            </center>
+                          </>
+                        }
+                        title="Message"
                         trigger="click"
-                        visible={this.state.visible}
-                        onVisibleChange={this.handleVisibleChange}
+                        visible={visible1}
+                        onVisibleChange={handleVisibleChange1}
                       >
                         <Button type="primary">Click me</Button>
-                      </Popover> */}{" "}
-                      Message
+                      </Popover>
                     </td>
                   </tr>
 
@@ -674,16 +750,30 @@ const Dashboard = () => {
                       <strong>Last week</strong>
                     </td>
                     <td>
-                      {/* <Popover
-                        content={<a onClick={this.hide}>Close</a>}
-                        title="Title"
+                      <Popover
+                        content={
+                          <>
+                            <center>
+                              <Input placeholder="Type here.." />
+                              <a color onClick={hide1}>
+                                High BP
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Urgent!
+                              </a>{" "}
+                              <a color onClick={hide1}>
+                                Help!
+                              </a>{" "}
+                            </center>
+                          </>
+                        }
+                        title="Message"
                         trigger="click"
-                        visible={this.state.visible}
-                        onVisibleChange={this.handleVisibleChange}
+                        visible={visible1}
+                        onVisibleChange={handleVisibleChange1}
                       >
                         <Button type="primary">Click me</Button>
-                      </Popover> */}{" "}
-                      Message
+                      </Popover>
                     </td>
                   </tr>
 

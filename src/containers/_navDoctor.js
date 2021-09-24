@@ -1,6 +1,28 @@
 import React from "react";
 import CIcon from "@coreui/icons-react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUmbrellaBeach } from "@fortawesome/free-solid-svg-icons";
+import { faPrescription } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faMoneyCheck } from "@fortawesome/free-solid-svg-icons";
+import { faMoneyBill } from "@fortawesome/free-solid-svg-icons";
+import { faUmbrella } from "@fortawesome/free-solid-svg-icons";
+
+import { faCalendarTimes } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { faHospitalUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHeartbeat } from "@fortawesome/free-solid-svg-icons";
+import { faBaby } from "@fortawesome/free-solid-svg-icons";
+import { faBabyCarriage } from "@fortawesome/free-solid-svg-icons";
+import { faBrain } from "@fortawesome/free-solid-svg-icons";
+import { faTooth } from "@fortawesome/free-solid-svg-icons";
+import { faDeaf } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+
 const _navDoctor = [
   {
     _tag: "CSidebarNavTitle",
@@ -11,26 +33,26 @@ const _navDoctor = [
     _tag: "CSidebarNavItem",
     name: "Home",
     to: "/docHome",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faHome} />,
   },
 
   {
     _tag: "CSidebarNavItem",
     name: "Appointment Requests",
     to: "/appointmentRequest",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faCalendarPlus} />,
   },
   {
     _tag: "CSidebarNavItem",
     name: "Patient Log",
     to: "/patientLog",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faUserFriends} />,
   },
   {
     _tag: "CSidebarNavItem",
     name: "Prescriptions",
     to: "/issuePrescription",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faPrescription} />,
   },
 
   {
@@ -42,26 +64,26 @@ const _navDoctor = [
     _tag: "CSidebarNavItem",
     name: "Apply for Leaves",
     to: "/leaves",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faUmbrellaBeach} />,
   },
 
   {
     _tag: "CSidebarNavItem",
     name: "Salary Slip",
     to: "/salary",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faMoneyBill} />,
   },
   {
     _tag: "CSidebarNavItem",
     name: "Benefits",
     to: "/benefits",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faUmbrella} />,
   },
   {
     _tag: "CSidebarNavItem",
     name: "Pension",
     to: "/pension",
-    icon: "cil-notes",
+    icon: <FontAwesomeIcon icon={faMoneyCheck} />,
   },
 
   {
@@ -79,37 +101,37 @@ const _navDoctor = [
         _tag: "CSidebarNavItem",
         name: "Cardiology",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faHeartbeat} />,
       },
       {
         _tag: "CSidebarNavItem",
         name: "Gynaecology",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faBabyCarriage} />,
       },
       {
         _tag: "CSidebarNavItem",
         name: "Paediatrics",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faBaby} />,
       },
       {
         _tag: "CSidebarNavItem",
         name: "Psychiatry",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faBrain} />,
       },
       {
         _tag: "CSidebarNavItem",
         name: "Dental",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faTooth} />,
       },
       {
         _tag: "CSidebarNavItem",
         name: "ENT",
         to: "/dashboard",
-        icon: "cil-heart",
+        icon: <FontAwesomeIcon icon={faDeaf} />,
       },
     ],
   },
@@ -118,7 +140,7 @@ const _navDoctor = [
     _tag: "CSidebarNavItem",
     name: "Your Profile",
     to: "/profile",
-    icon: "cil-heart",
+    icon: <FontAwesomeIcon icon={faUser} />,
   },
 ];
 

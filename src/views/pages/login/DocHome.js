@@ -26,14 +26,27 @@ function callback(key) {
   console.log(key);
 }
 
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
+const text1 = `
+A defunct luxury hotel in Cambodia's capital finished conversion into a 500-room coronavirus hospital on Monday (Mar 8), as authorities enforced a new law imposing criminal punishments for violating health rules and infections continued to rise in the Southeast Asian country.
+
+The Great Duke Phnom Penh has not been in operation for two years, and is now set up to treat virus patients amid a third wave of the pandemic in Cambodia. 
+
+Prime Minister Hun Sen assigned General Hun Manet, his eldest son and a powerful army chief, to lead the two-day effort to turn the hotel into a temporary hospital.
 `;
+
+const text2 = `
+Kantha Bopha installed a unit focusing on pediatric cardiac surgery and interventional cardiology in Siem Reap in 2011. Over the past nine years, the hospital’s surgeons have regularly used cardiac catheterization to diagnose and treat cardiovascular conditions such as septal defects, or “hole in the heart,” coarctation of the aorta, which is when the body’s main artery is narrower than normal, and underdeveloped hearts, which is when the organ struggles to pump enough blood to the lungs or around the body.`;
+
+const text3 = `
+The Ministry of Health of Cambodia (MoH) has permitted registered private hospitals in Phnom Penh capital to treat COVID-19 patients.
+
+According to the ministry’s announcement dated April 25, the interested private hospitals must request for a legal permission from the Ministry of Health through the Department of Hospital Services.
+
+The hospitals considered qualified for the treatment of coronavirus patients are those with adequate location and parking, ambulances with enough medical equipment, appropriate and safe patient rooms, and emergency room with adequate medical materials.`;
+
 const recurrenceAppointments = [
   {
-    title: "Website Re-Design Plan",
+    title: "UN Health Awareness Conference",
     startDate: new Date(2018, 5, 25, 9, 15),
     endDate: new Date(2018, 5, 25, 11, 30),
     id: 100,
@@ -41,7 +54,7 @@ const recurrenceAppointments = [
     exDate: "20180628T063500Z,20180626T061500Z",
   },
   {
-    title: "Book Flights to San Fran for Sales Trip",
+    title: "Follow-up for the vaccine ",
     startDate: new Date(2018, 5, 25, 12, 11),
     endDate: new Date(2018, 5, 25, 13, 0),
     id: 101,
@@ -50,7 +63,7 @@ const recurrenceAppointments = [
     allDay: true,
   },
   {
-    title: "Install New Router in Dev Room",
+    title: "Clinic-2",
     startDate: new Date(2018, 5, 25, 13, 30),
     endDate: new Date(2018, 5, 25, 14, 35),
     id: 102,
@@ -71,28 +84,28 @@ const recurrenceAppointments = [
     location: "Room 2",
   },
   {
-    title: "New Brochures",
+    title: "Equipment Meeting",
     startDate: new Date(2018, 5, 26, 14, 40),
     endDate: new Date(2018, 5, 26, 15, 45),
     id: 5,
     location: "Room 2",
   },
   {
-    title: "Install New Database",
+    title: "Surgery D165AQR",
     startDate: new Date(2018, 5, 28, 9, 45),
     endDate: new Date(2018, 5, 28, 11, 15),
     id: 6,
     location: "Room 1",
   },
   {
-    title: "Approve New Online Marketing Strategy",
+    title: "Board of Directors Coffee Catch up",
     startDate: new Date(2018, 5, 29, 11, 45),
     endDate: new Date(2018, 5, 29, 13, 5),
     id: 7,
     location: "Room 3",
   },
   {
-    title: "Create Icons for Website",
+    title: "Surgery Y183DWS",
     startDate: new Date(2018, 5, 29, 10, 0),
     endDate: new Date(2018, 5, 29, 11, 30),
     id: 12,
@@ -178,14 +191,24 @@ export default class Demo extends React.PureComponent {
                 </CCardHeader>
                 <CCardBody>
                   <Collapse defaultActiveKey={["1"]} onChange={callback}>
-                    <Panel header="This is panel header 1" key="1">
-                      <p>{text}</p>
+                    <Panel
+                      header="Cambodia turns hotel into hospital as COVID-19 cases rise"
+                      key="1"
+                    >
+                      <p>{text1}</p>
                     </Panel>
-                    <Panel header="This is panel header 2" key="2">
-                      <p>{text}</p>
+                    <Panel
+                      header="Legendary Children’s Hospital In Cambodia Is Now Using MRI For Young Cardiac Patients"
+                      key="2"
+                    >
+                      <p>{text2}</p>
                     </Panel>
-                    <Panel header="This is panel header 3" key="3">
-                      <p>{text}</p>
+                    <Panel
+                      header="Cambodia allows private hospitals in Phnom Penh to treat COVID-19 patients
+"
+                      key="3"
+                    >
+                      <p>{text3}</p>
                     </Panel>
                   </Collapse>
                 </CCardBody>
@@ -194,7 +217,7 @@ export default class Demo extends React.PureComponent {
                 <CCardHeader>
                   {" "}
                   <h3 class=" display-4 text-primary ml-3 my-3 text-center">
-                    Patients Log
+                    Doctors Log
                   </h3>
                 </CCardHeader>
                 <CCardBody>
@@ -207,7 +230,7 @@ export default class Demo extends React.PureComponent {
                         <th>Doctors</th>
                         <th className="text-center">Country</th>
 
-                        <th className="text-center">Payment Method</th>
+                        <th className="text-center">Department</th>
                         <th>Activity</th>
                         <th>Contact</th>
                       </tr>
@@ -234,9 +257,7 @@ export default class Demo extends React.PureComponent {
                           <CIcon height={25} name="cif-us" title="us" id="us" />
                         </td>
 
-                        <td className="text-center">
-                          <CIcon height={25} name="cib-cc-mastercard" />
-                        </td>
+                        <td className="text-center">Homeopathy</td>
 
                         <td>
                           <div className="small text-muted">Last login</div>
@@ -276,9 +297,7 @@ export default class Demo extends React.PureComponent {
                         <td className="text-center">
                           <CIcon height={25} name="cif-br" title="br" id="br" />
                         </td>
-                        <td className="text-center">
-                          <CIcon height={25} name="cib-cc-visa" />
-                        </td>
+                        <td className="text-center">Obstetrics</td>
 
                         <td>
                           <div className="small text-muted">Last login</div>
@@ -320,9 +339,7 @@ export default class Demo extends React.PureComponent {
                         <td className="text-center">
                           <CIcon height={25} name="cif-in" title="in" id="in" />
                         </td>
-                        <td className="text-center">
-                          <CIcon height={25} name="cib-stripe" />
-                        </td>
+                        <td className="text-center">Paediatrics</td>
 
                         <td>
                           <div className="small text-muted">Last login</div>
@@ -364,9 +381,7 @@ export default class Demo extends React.PureComponent {
                         <td className="text-center">
                           <CIcon height={25} name="cif-fr" title="fr" id="fr" />
                         </td>
-                        <td className="text-center">
-                          <CIcon height={25} name="cib-paypal" />
-                        </td>
+                        <td className="text-center">Plastic surgery</td>
 
                         <td>
                           <div className="small text-muted">Last login</div>
@@ -410,9 +425,7 @@ export default class Demo extends React.PureComponent {
                         <td className="text-center">
                           <CIcon height={25} name="cif-es" title="es" id="es" />
                         </td>
-                        <td className="text-center">
-                          <CIcon height={25} name="cib-google-pay" />
-                        </td>
+                        <td className="text-center">Neurology</td>
                         <td>
                           <div className="small text-muted">Last login</div>
                           <strong>Last week</strong>

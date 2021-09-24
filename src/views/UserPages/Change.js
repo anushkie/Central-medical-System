@@ -1,5 +1,11 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Table, Input, Button, Popconfirm, Form } from "antd";
+import { useHistory } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
 const EditableContext = React.createContext(null);
 
 const EditableRow = ({ index, ...props }) => {
@@ -13,6 +19,9 @@ const EditableRow = ({ index, ...props }) => {
   );
 };
 
+const handleLogin = () => {
+  console.log("CAlled");
+};
 const EditableCell = ({
   title,
   editable,
@@ -82,6 +91,13 @@ const EditableCell = ({
   return <td {...restProps}>{childNode}</td>;
 };
 
+// const [primary, setPrimary] = useState(false);
+// const history = useHistory();
+// const history1 = useHistory();
+
+// const handleLogin = () => {
+//   history.push("/plan");
+// };
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -102,7 +118,7 @@ class EditableTable extends React.Component {
       },
       {
         title: "Time Slot",
-        dataIndex: "address",
+        dataIndex: "time",
       },
       {
         title: "Operation",
@@ -113,7 +129,10 @@ class EditableTable extends React.Component {
               title="Sure to delete?"
               onConfirm={() => this.handleDelete(record.key)}
             >
-              <a>Delete</a>
+              <a>
+                Delete
+                <FontAwesomeIcon icon={faTrashAlt} />
+              </a>
             </Popconfirm>
           ) : null,
       },
@@ -122,15 +141,24 @@ class EditableTable extends React.Component {
       dataSource: [
         {
           key: "0",
-          name: "Edward King 0",
-          age: "32",
-          address: "London, Park Lane no. 0",
+          name: "Anushka Bhatnagar",
+          age: "24",
+          address: "Nursing Home - Alpha",
+          time: "12:00-12:40",
         },
         {
           key: "1",
-          name: "Edward King 1",
+          name: "Tom Brown",
           age: "32",
-          address: "London, Park Lane no. 1",
+          address: "Clinic - A123",
+          time: "18:00-19:00",
+        },
+        {
+          key: "2",
+          name: "Edward King",
+          age: "65",
+          address: "Royal blue Hospital",
+          time: "10:00-10:30",
         },
       ],
       count: 2,
@@ -167,6 +195,12 @@ class EditableTable extends React.Component {
     });
   };
 
+  // handleLogin = () => {
+  //   history = useHistory();
+
+  //   history.push("/login");
+  // };
+
   render() {
     const { dataSource } = this.state;
     const components = {
@@ -201,6 +235,24 @@ class EditableTable extends React.Component {
           columns={columns}
         />
         {/* <EditableTable />, */}
+        {/* <div className="col-md-4">
+          <Button type="primary" onClick={handleLogin()}>
+            Book an appointment
+          </Button>
+        </div> */}
+
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+            <center>
+              <Button type="primary" onClick={handleLogin()}>
+                <FontAwesomeIcon icon={faCalendar} /> Book an new appointment
+              </Button>
+            </center>
+          </div>
+
+          <div className="col-md-4"></div>
+        </div>
       </div>
     );
   }

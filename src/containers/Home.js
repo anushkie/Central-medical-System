@@ -6,7 +6,7 @@ import TouchAppIcon from "@material-ui/icons/TouchApp";
 import { Link } from "react-router-dom";
 import { Button, Radio } from "antd";
 import { useHistory } from "react-router-dom";
-import TheLayout2 from "../containers/TheLayout2";
+import TheLayout2 from "../containers/GenericLayout";
 
 import {
   CButton,
@@ -31,7 +31,7 @@ const Modals = () => {
 
   return (
     <TheLayout2>
-      <div className="margin-top w-100 text-center mb-3 ">
+      {/* <div className="margin-top w-100 text-center mb-3 ">
         <CButton
           color="primary"
           onClick={() => setPrimary(!primary)}
@@ -50,38 +50,37 @@ const Modals = () => {
         >
           {" "}
           Patient
-        </CButton>
+        </CButton> */}
 
-        <CModal
-          show={primary}
-          onClose={() => setPrimary(!primary)}
-          color="primary"
-        >
-          <CModalHeader closeButton>
-            <CModalTitle>
-              <TouchAppIcon /> Please select
-            </CModalTitle>
-          </CModalHeader>
-          <CModalBody>
-            <div className="site-button-ghost-wrapper">
-              {" "}
-              <center>
-                <Button type="primary" ghost onClick={handleLogin}>
-                  Login
-                </Button>
-                <Button type="primary" ghost onClick={handleRegister}>
-                  Register
-                </Button>
-              </center>
-            </div>
-          </CModalBody>
-          <CModalFooter>
-            <CButton color="secondary" onClick={() => setPrimary(!primary)}>
-              Cancel
-            </CButton>
-          </CModalFooter>
-        </CModal>
-      </div>
+      <CModal
+        show={primary}
+        onClose={() => setPrimary(!primary)}
+        color="primary"
+      >
+        <CModalHeader closeButton>
+          <CModalTitle>
+            <TouchAppIcon /> Please select
+          </CModalTitle>
+        </CModalHeader>
+        <CModalBody>
+          <div className="site-button-ghost-wrapper">
+            {" "}
+            <center>
+              <Button type="primary" ghost onClick={handleLogin}>
+                Login
+              </Button>
+              <Button type="primary" ghost onClick={handleRegister}>
+                Register
+              </Button>
+            </center>
+          </div>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="secondary" onClick={() => setPrimary(!primary)}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal>
     </TheLayout2>
   );
 };

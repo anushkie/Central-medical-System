@@ -5,6 +5,13 @@ import { Input, Space } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
 import FontSizeChanger from "react-font-size-changer";
 import { Menu, Dropdown, Button } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVirus } from "@fortawesome/free-solid-svg-icons";
+import { faAtom } from "@fortawesome/free-solid-svg-icons";
+import { faPills } from "@fortawesome/free-solid-svg-icons";
+import { faBaby } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
 import {
   CHeader,
@@ -131,102 +138,118 @@ const TheHeader = () => {
   );
 
   return (
-    <CHeader withSubheader style={{ top: "30px" }}>
-      <CHeaderBrand className="mx-auto d-lg-none" to="/"></CHeaderBrand>
-      <CHeaderNav className="d-md-down-none mr-auto">
-        <Space direction="vertical">
-          <Search
-            placeholder="input search text"
-            onSearch={onSearch}
-            style={{ width: 200 }}
+    <>
+      <CHeader withSubheader style={{ top: "30px" }}>
+        <CHeaderBrand className="mx-auto d-lg-none" to="/"></CHeaderBrand>
+        <CHeaderNav className=" topbar-leftAlignment d-md-down-none mr-auto">
+          <Space direction="vertical">
+            <Search
+              placeholder="input search text"
+              onSearch={onSearch}
+              style={{ width: 200 }}
+            />
+          </Space>
+          <CHeaderNavItem className=" size px-3">
+            <CHeaderNavLink to="/covid">
+              <span className="  ">
+                <FontAwesomeIcon icon={faVirus} /> Covid-19
+              </span>
+            </CHeaderNavLink>
+          </CHeaderNavItem>
+          <CHeaderNavItem className="size px-3">
+            <CHeaderNavLink to="/rnd">
+              <FontAwesomeIcon icon={faAtom} />
+              Research and Develop
+            </CHeaderNavLink>
+          </CHeaderNavItem>
+          <CHeaderNavItem className="size px-3">
+            <CHeaderNavLink to="/pharmacy">
+              <FontAwesomeIcon icon={faPills} />
+              Pharmacy
+            </CHeaderNavLink>
+          </CHeaderNavItem>
+          <CHeaderNavItem className="size px-3">
+            <CHeaderNavLink to="/pregnancy">
+              <FontAwesomeIcon icon={faBaby} />
+              Pregnancy
+            </CHeaderNavLink>
+          </CHeaderNavItem>
+          <CHeaderNavItem className="size px-3">
+            <CHeaderNavLink to="/aboutUs">
+              <FontAwesomeIcon icon={faAddressCard} />
+              About Us
+            </CHeaderNavLink>
+          </CHeaderNavItem>
+        </CHeaderNav>
+        <CSubheader className="px-3 justify-content-between">
+          <CBreadcrumbRouter
+            className="border-0 c-subheader-nav m-0 px-0 px-md-3"
+            routes={routes}
           />
-        </Space>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/covid">Covid-19</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/rnd">Research and Develop</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/pharmacy">Pharmacy</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/pregnancy"> Pregnancy</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/aboutUs"> About Us</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/userLogin">Login</CHeaderNavLink>
-        </CHeaderNavItem>
-      </CHeaderNav>
 
-      <CSubheader className="px-3 justify-content-between">
-        <CBreadcrumbRouter
-          className="border-0 c-subheader-nav m-0 px-0 px-md-3"
-          routes={routes}
-        />
+          <div className="d-md-down-none mfe-2 c-subheader-nav">
+            <FontSizeChanger
+              targets={[".changeSize"]}
+              onChange={(element, newValue, oldValue) => {
+                console.log(element, newValue, oldValue);
+              }}
+              options={{
+                stepSize: 2,
+                range: 3,
+              }}
+            />
 
-        <div className="d-md-down-none mfe-2 c-subheader-nav">
-          <FontSizeChanger
-            targets={[".changeSize"]}
-            onChange={(element, newValue, oldValue) => {
-              console.log(element, newValue, oldValue);
-            }}
-            options={{
-              stepSize: 2,
-              range: 3,
-            }}
-          />
+            <div className="select-container">
+              <Select
+                onChange={test}
+                placeholder="Select Font"
+                style={{ width: 150 }}
+                onChange={(event) => handleFontChange(event)}
+              >
+                <Option value="Arial">Arial</Option>
+                <Option value="Arial">Times New Roman</Option>
+                <Option value="Arial">Comic Sans MS</Option>
+                <Option value="Arial">Georgia</Option>
+              </Select>
+            </div>
 
-          <div className="select-container">
-            <Select
-              onChange={test}
-              placeholder="Select Font"
-              style={{ width: 100 }}
-              onChange={(event) => handleFontChange(event)}
-            >
-              <Option value="0">Select</Option>
-              <Option value="Arial">Arial</Option>
-            </Select>
+            <Space direction="vertical">
+              <Space wrap>
+                <Dropdown overlay={menuColorT} placement="bottomCenter">
+                  <Button>
+                    <img style={{ height: "120%" }} src="imgs/textT.jpg" />
+                  </Button>
+                </Dropdown>
+              </Space>
+            </Space>
+            <Space direction="vertical">
+              <Space wrap>
+                <Dropdown overlay={menuBackground} placement="bottomCenter">
+                  <Button>
+                    <img style={{ height: "120%" }} src="imgs/back.jpg" />
+                  </Button>
+                </Dropdown>
+              </Space>
+            </Space>
+
+            <Space direction="vertical">
+              <Space wrap>
+                <Dropdown overlay={menu} placement="bottomCenter">
+                  <Button>
+                    <img style={{ height: "120%" }} src="imgs/langs.jpg" />
+                  </Button>
+                </Dropdown>
+              </Space>
+            </Space>
           </div>
 
-          <Space direction="vertical">
-            <Space wrap>
-              <Dropdown overlay={menuColorT} placement="bottomCenter">
-                <Button>
-                  <img style={{ height: "120%" }} src="imgs/textT.jpg" />
-                </Button>
-              </Dropdown>
-            </Space>
-          </Space>
-          <Space direction="vertical">
-            <Space wrap>
-              <Dropdown overlay={menuBackground} placement="bottomCenter">
-                <Button>
-                  <img style={{ height: "120%" }} src="imgs/back.jpg" />
-                </Button>
-              </Dropdown>
-            </Space>
-          </Space>
-
-          <Space direction="vertical">
-            <Space wrap>
-              <Dropdown overlay={menu} placement="bottomCenter">
-                <Button>
-                  <img style={{ height: "120%" }} src="imgs/langs.jpg" />
-                </Button>
-              </Dropdown>
-            </Space>
-          </Space>
-        </div>
-
-        <CHeaderNav>
-          <TheHeaderDropdownMssg />
-          <TheHeaderDropdown />
-        </CHeaderNav>
-      </CSubheader>
-    </CHeader>
+          <CHeaderNav>
+            <TheHeaderDropdownMssg />
+            <TheHeaderDropdown />
+          </CHeaderNav>
+        </CSubheader>
+      </CHeader>
+    </>
   );
 };
 

@@ -1,10 +1,15 @@
 import React from "react";
 import UserLayout from "../containers/UserLayout";
-
 import { CCard, CCardBody } from "@coreui/react";
-
 import { Upload, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faUserMd } from "@fortawesome/free-solid-svg-icons";
+import { faMapPin } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import { faPrescription } from "@fortawesome/free-solid-svg-icons";
 
 function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -18,14 +23,15 @@ function getBase64(file) {
 class PicturesWall extends React.Component {
   state = {
     previewVisible: false,
-    previewImage: "",
+    previewImage:
+      "https://storage.cashlesshealthcare.com/clhcapps-trade-static/wp-content/uploads/2020/08/28145639/rx-sample%402x-75f9059211466d9785c666d361ba3e9c.png",
     previewTitle: "",
     fileList: [
       {
         uid: "-1",
         name: "prescription",
         status: "done",
-        url: "https://pin.it/52yuVuW",
+        url: "https://storage.cashlesshealthcare.com/clhcapps-trade-static/wp-content/uploads/2020/08/28145639/rx-sample%402x-75f9059211466d9785c666d361ba3e9c.png",
       },
     ],
   };
@@ -59,25 +65,41 @@ class PicturesWall extends React.Component {
       <UserLayout>
         <CCard>
           <CCardBody>
-            <table className="margin-top table table-hover table-outline mb-0 d-none d-sm-table">
-              <thead className="thead-light">
+            <table className="margin-top table table-outline mb-0 d-none d-sm-table">
+              <thead className="">
                 <tr>
                   <th className="text-center">S.no</th>
-                  <th className="text-center">Date</th>
+                  <th className="text-center">
+                    {/* <FontAwesomeIcon icon={faCalendar} /> */}
+                    Date
+                  </th>
 
-                  <th className="text-center"> Doctor's Name</th>
-                  <th className="text-center">Address</th>
-                  <th className="text-center">Contact</th>
-                  <th className="text-center">Prescription</th>
+                  <th className="text-center">
+                    {" "}
+                    {/* <FontAwesomeIcon icon={faUserMd} /> */}
+                    Doctor's Name
+                  </th>
+                  <th className="text-center">
+                    {/* <FontAwesomeIcon icon={faMapPin} /> */}
+                    Address
+                  </th>
+                  <th className="text-center">
+                    {/* <FontAwesomeIcon icon={faAddressBook} /> */}
+                    Contact
+                  </th>
+                  <th className="text-center">
+                    {/* <FontAwesomeIcon icon={faPrescription} /> */}
+                    Prescription
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="text-center">1</td>
                   <td className="text-center">20/09/2021</td>
-                  <td className="text-center">Vaishali Buttan</td>
-                  <td className="text-center"> 123 Norwich Road</td>
-                  <td className="text-center"> 78459374628</td>
+                  <td className="text-center">Michael Blaire</td>
+                  <td className="text-center"> 12/32 Magadelan street</td>
+                  <td className="text-center"> 07863542345</td>
                   <td className="text-center">
                     <Upload
                       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
@@ -95,9 +117,11 @@ class PicturesWall extends React.Component {
                       onCancel={this.handleCancel}
                     >
                       <img
-                        alt="example"
+                        alt="prescription"
                         style={{ width: "100%" }}
-                        src={previewImage}
+                        src={
+                          "https://storage.cashlesshealthcare.com/clhcapps-trade-static/wp-content/uploads/2020/08/28145639/rx-sample%402x-75f9059211466d9785c666d361ba3e9c.png"
+                        }
                       />
                     </Modal>
                   </td>

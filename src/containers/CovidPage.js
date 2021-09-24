@@ -11,7 +11,7 @@ import {
   CEmbed,
   CEmbedItem,
 } from "@coreui/react";
-import TheLayout2 from "../containers/TheLayout2";
+import TheLayout2 from "../containers/GenericLayout";
 
 const CovidPage = ({ match }) => {
   return (

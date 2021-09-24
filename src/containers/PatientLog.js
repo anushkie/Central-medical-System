@@ -35,11 +35,47 @@ function createData(name, calories, fat, cons, carbs, pres, protein, mess) {
 }
 
 const rows = [
-  createData("Vaishali", 23, 1, 5, "Click here", "d", "d"),
-  createData("Ishita", 33, 11, 8, "Click here"),
-  createData("Sneh", 27, 43, 1, "Click here"),
-  createData("Ankur", 40, 34, 6, "Click here"),
-  createData("Vivek", 54, 91, 5, "Click here"),
+  createData(
+    "Vaishali",
+    23,
+    1,
+    "23/5/2021",
+    7,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Ishita",
+    33,
+    11,
+    "11/08/2020",
+    8,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData("Sneh", 27, 43, "1/1/2021", 1, "Click here", "Click here", "Chat"),
+  createData(
+    "Ankur",
+    40,
+    34,
+    "31/07/2020",
+    6,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Vivek",
+    54,
+    91,
+    "12/2/2019",
+    5,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
 
   createData(
     "Gozdem",
@@ -52,11 +88,56 @@ const rows = [
     "Chat"
   ),
 
-  createData("Greta", 63, 10, 2, "Click here"),
-  createData("Ayush", 20, 14, 3, "Click here"),
-  createData("Naman", 19, 71, 3, "Click here"),
-  createData("Vartika", 42, 41, 5, "Click here"),
-  createData("Maddy", 23, 98, 8, "Click here"),
+  createData(
+    "Greta",
+    63,
+    10,
+    "26/04/2021",
+    2,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Ayush",
+    20,
+    14,
+    "12/6/2020",
+    3,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Naman",
+    19,
+    71,
+    "23/09/2020",
+    3,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Vartika",
+    42,
+    41,
+    "19/09/2021",
+    5,
+    "Click here",
+    "Click here",
+    "Chat"
+  ),
+  createData(
+    "Maddy",
+    23,
+    98,
+    "11/11/2020",
+    8,
+    "Click here",
+    "Click here",
+    "Chat "
+  ),
 ];
 
 function descendingComparator(a, b, orderBy) {

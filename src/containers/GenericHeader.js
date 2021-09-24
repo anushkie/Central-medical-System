@@ -5,7 +5,6 @@ import { Input, Space } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
 import FontSizeChanger from "react-font-size-changer";
 import { Menu, Dropdown, Button } from "antd";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVirus } from "@fortawesome/free-solid-svg-icons";
 import { faAtom } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +27,7 @@ import CIcon from "@coreui/icons-react";
 // routes config
 import routes from "../routes";
 
-import { TheHeaderDropdown, TheHeaderDropdownMssg } from "./IndexDoctor";
+import { TheHeaderDropdown, TheHeaderDropdownMssg } from "./index";
 
 const suffix = (
   <AudioOutlined
@@ -39,13 +38,13 @@ const suffix = (
   />
 );
 const { Search } = Input;
-
+const handleFontChange = (event) => {
+  localStorage.setItem("font_size", event);
+};
 const onSearch = (value) => console.log(value);
-
-const TheHeader2 = () => {
-  const handleFontChange = (event) => {
-    localStorage.setItem("font_size", event);
-  };
+const TheHeader = () => {
+  const dispatch = useDispatch();
+  const sidebarShow = useSelector((state) => state.sidebarShow);
 
   const { Option } = Select;
 
@@ -141,7 +140,7 @@ const TheHeader2 = () => {
   return (
     <CHeader withSubheader style={{ top: "30px" }}>
       <CHeaderBrand className="mx-auto d-lg-none" to="/"></CHeaderBrand>
-      <CHeaderNav className="topbar-leftAlignment d-md-down-none mr-auto">
+      <CHeaderNav className="d-md-down-none mr-auto">
         <Space direction="vertical">
           <Search
             placeholder="input search text"
@@ -181,13 +180,19 @@ const TheHeader2 = () => {
             About Us
           </CHeaderNavLink>
         </CHeaderNavItem>
+        <CHeaderNavItem className="size px-3">
+          <CHeaderNavLink to="/login">
+            <FontAwesomeIcon icon={faSignInAlt} />
+            Login
+          </CHeaderNavLink>
+        </CHeaderNavItem>
       </CHeaderNav>
 
-      <CSubheader className="px-3 justify-content-between">
-        <CBreadcrumbRouter
+      <CSubheader className="px-3 accessibility-bar">
+        {/* <CBreadcrumbRouter
           className="border-0 c-subheader-nav m-0 px-0 px-md-3"
           routes={routes}
-        />
+        /> */}
 
         <div className="d-md-down-none mfe-2 c-subheader-nav">
           <FontSizeChanger
@@ -208,8 +213,10 @@ const TheHeader2 = () => {
               style={{ width: 150 }}
               onChange={(event) => handleFontChange(event)}
             >
-              <Option value="0">Select</Option>
               <Option value="Arial">Arial</Option>
+              <Option value="Arial">Times New Roman</Option>
+              <Option value="Arial">Comic Sans MS</Option>
+              <Option value="Arial">Georgia</Option>
             </Select>
           </div>
 
@@ -242,14 +249,9 @@ const TheHeader2 = () => {
             </Space>
           </Space>
         </div>
-
-        <CHeaderNav className="px-3">
-          <TheHeaderDropdownMssg />
-          <TheHeaderDropdown />
-        </CHeaderNav>
       </CSubheader>
     </CHeader>
   );
 };
 
-export default TheHeader2;
+export default TheHeader;

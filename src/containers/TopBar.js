@@ -15,9 +15,12 @@ const TopBar = () => {
         }}
       >
         <div className="container-fluid">
-          <a className="navbar-brand1" >
-          <div class="w3-cursive">
-            <h3><center>CENTRAL MEDICAL SERVICES</center></h3> </div>
+          <a className="navbar-brand1">
+            <div class=" family w3-cursive">
+              <h3>
+                <center>CENTRAL MEDICAL SERVICES</center>
+              </h3>{" "}
+            </div>
           </a>
         </div>
       </nav>

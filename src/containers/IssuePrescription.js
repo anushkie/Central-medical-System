@@ -36,7 +36,7 @@ class PicturesWall extends React.Component {
         uid: "-1",
         name: "prescription",
         status: "done",
-        url: "https://pin.it/52yuVuW",
+        url: "https://storage.cashlesshealthcare.com/clhcapps-trade-static/wp-content/uploads/2020/08/28145639/rx-sample%402x-75f9059211466d9785c666d361ba3e9c.png",
       },
     ],
   };
@@ -80,7 +80,7 @@ class PicturesWall extends React.Component {
           <thead className="thead-light">
             <tr>
               <th className="text-center">Patient ID</th>
-              <th className="text-center">Name</th>
+              <th className="text-center">Patient's Name</th>
 
               <th className="text-center">Address</th>
               <th className="text-center">Contact</th>
@@ -91,12 +91,12 @@ class PicturesWall extends React.Component {
           <tbody>
             <tr>
               <td className="text-center">83</td>
-              <td className="text-center">Vaishali Buttan</td>
-              <td className="text-center"> 123 Norwich Road</td>
+              <td className="text-center">Anushka Bhatnagar</td>
+              <td className="text-center"> 98 Chitra Vihar, India</td>
               <td className="text-center"> 78459374628</td>
               <td className="text-center">
                 <Upload
-                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                  action="https://storage.cashlesshealthcare.com/clhcapps-trade-static/wp-content/uploads/2020/08/28145639/rx-sample%402x-75f9059211466d9785c666d361ba3e9c.png"
                   listType="picture-card"
                   fileList={fileList}
                   onPreview={this.handlePreview}

@@ -29,7 +29,7 @@ const TheHeaderDropdown = () => {
 
         <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />
-          Profile
+          Anushka Bhatnagar
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" />

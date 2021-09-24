@@ -13,6 +13,61 @@
   margin-top: 80px;
 }
 
+.margin-top2 {
+  margin-top: 100px;
+}
+
 .color {
   color: blue;
+}
+
+.family {
+  font-family: monospace;
+}
+
+.size {
+  font-size: large;
+  font-weight: bold;
+}
+
+.cardcolor {
+  background: #ebf5fb;
+  font-family: sans-serif;
+  font-size: large;
+}
+
+.card-headcolor {
+  background: #aed6f1;
+  font-family: sans-serif;
+  font-size: large;
+}
+
+.data {
+  font-size: x-large;
+  font-family: sans-serif;
+  background: #ebf5fb;
+}
+
+.headings {
+  color: blue;
+}
+
+.big-size {
+  font-size: large;
+}
+
+.accessibility-bar {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.div_aligns {
+  display: flex;
+  width: 100% !important;
+  text-align: center;
+  justify-content: center;
+}
+
+.topbar-leftAlignment {
+  margin-left: -243px !important;
 }

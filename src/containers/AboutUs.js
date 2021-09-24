@@ -1,5 +1,5 @@
 import React from "react";
-import TheLayout2 from "../containers/TheLayout2";
+import GenericLayout from "../containers/GenericLayout";
 import { Card, Avatar } from "antd";
 import {
   EditOutlined,
@@ -11,7 +11,7 @@ const { Meta } = Card;
 
 const AboutUs = () => {
   return (
-    <TheLayout2>
+    <GenericLayout>
       <div className=" margin-top w-100 text-center mb-3 ">
         <h2>About Us </h2>
         <center>
@@ -35,7 +35,7 @@ const AboutUs = () => {
           </Card>
         </center>
       </div>
-    </TheLayout2>
+    </GenericLayout>
   );
 };
 export default AboutUs;

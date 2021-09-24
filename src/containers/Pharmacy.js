@@ -2,75 +2,77 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Table } from "antd";
 import { Select } from "antd";
+import { Input, Space } from "antd";
+
 import CIcon from "@coreui/icons-react";
-import TheLayout2 from "./TheLayout2";
+import GenericLayout from "./GenericLayout";
 const { Option } = Select;
+const { Search } = Input;
 
 const columns = [
-  { title: "Name", dataIndex: "name", key: "name" },
-  { title: "Age", dataIndex: "age", key: "age" },
+  { title: "Pharmacy Name", dataIndex: "name", key: "name" },
   { title: "Address", dataIndex: "address", key: "address" },
+  { title: "Quantity", dataIndex: "age", key: "age" },
   {
     title: "Action",
     dataIndex: "",
     key: "x",
-    render: () => <a>Delete</a>,
+    render: () => <a>Buy</a>,
   },
 ];
 
 const data = [
   {
     key: 1,
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    description:
-      "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
+    name: "Allwell Medicos",
+    age: 12,
+    address: "12 woltan street",
+    description: "Opening Timings : 10:00 - 22:00 pm",
   },
   {
     key: 2,
-    name: "Jim Green",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    description:
-      "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.",
+    name: "Health Green",
+    age: 22,
+    address: "1/23 Chawri bazar",
+    description: "Opening Timings : 12:00 -18:00 ",
   },
+
   {
     key: 3,
-    name: "Not Expandable",
-    age: 29,
-    address: "Jiangsu No. 1 Lake Park",
-    description: "This not expandable",
-  },
-  {
-    key: 4,
-    name: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    description:
-      "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.",
+    name: "Sai Medical",
+    age: 3,
+    address: "Sidney No. 2 Lake Park",
+    description: "Opening Timings : 10:00 am -10:00 pm",
   },
 ];
-
+const DisplayTable = () => {
+  console.log("this is calling yayy");
+};
 const Pharmacy = () => {
   return (
-    <TheLayout2>
+    <GenericLayout>
       <div className="margin-top w-100 text-center mb-3 ">
         <h2>Pharmacy</h2>
         <br />
         <div className="d-inline-flex">
-          <CIcon name="cif-in" />
-
-          <CIcon name="cif-pk" />
-          <CIcon name="cif-bd" />
-          <CIcon name="cif-jo" />
-
           <Select
             defaultValue="Select a country"
             style={{ width: 240 }}
             // onChange={handleChange}
             // value={selectedState}
           >
+            <Option value="India"> India</Option>
+            <Option value="Africa"> Africa </Option>
+            <Option value="Bangladesh ">Bangladesh</Option>
+            <Option value="Cambodia">Cambodia</Option>
+            <Option value="Bhutan">Bhutan</Option>
+
+            <Option value="Bhutan">Brazil</Option>
+            <Option value="Pakistan">Pakistan</Option>
+          </Select>
+
+          <div className="margin-bet"> </div>
+          <Select defaultValue="Select a State">
             <Option value="Andaman and Nicobar Islands">
               {" "}
               Andaman and Nicobar Islands
@@ -112,16 +114,19 @@ const Pharmacy = () => {
             <Option value="Uttarakhand">Uttarakhand</Option>
             <Option value="West Bengal">West Bengal</Option>
           </Select>
-
-          <div className="margin-bet"> </div>
-          <Select defaultValue="Select a State">
-            <Option value="Tamil Nadu">Tamil Nadu</Option>
-            <Option value="Telengana">Telengana</Option>
-            <Option value="Tripura">Tripura</Option>
-          </Select>
         </div>
       </div>
+      <div className="w-100 text-center mb-3 ">
+        <Space direction="vertical">
+          <Search
+            placeholder="Medicine name"
+            style={{ width: 200 }}
+            onChange={DisplayTable()}
+          />
+        </Space>
+      </div>
       <Table
+        className="big-size"
         columns={columns}
         expandable={{
           expandedRowRender: (record) => (
@@ -132,7 +137,7 @@ const Pharmacy = () => {
         dataSource={data}
       />
       ,
-    </TheLayout2>
+    </GenericLayout>
   );
 };
 export default Pharmacy;

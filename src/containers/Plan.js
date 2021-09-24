@@ -53,66 +53,113 @@ const FormSizeDemo = () => {
               <Radio.Button value="large">Large</Radio.Button>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Input">
+          <Form.Item label="First Name">
             <Input />
           </Form.Item>
-          <Form.Item label="Select">
-            <Select>
-              <Select.Option value="demo">Demo</Select.Option>
-            </Select>
+          <Form.Item label="Last Name">
+            <Input />
           </Form.Item>
-          <Form.Item label="TreeSelect">
+          <Form.Item label="Date of Birth">
+            <DatePicker />
+          </Form.Item>
+          <Form.Item label="Select Locations">
             <TreeSelect
               treeData={[
                 {
-                  title: "Light",
-                  value: "light",
-                  children: [
-                    {
-                      title: "Bamboo",
-                      value: "bamboo",
-                    },
-                  ],
+                  title: "Clinic-A24",
+                  value: "Clinic-A24",
+                },
+                {
+                  title: "Clinic-B76",
+                  value: "Clinic-B76",
+                },
+                {
+                  title: "XYZ Hospital",
+                  value: "XYZ Hospital",
                 },
               ]}
             />
           </Form.Item>
-          <Form.Item label="Cascader">
+          <Form.Item label="Available doctors">
             <Cascader
               options={[
                 {
-                  value: "zhejiang",
-                  label: "Zhejiang",
+                  value: "Physician",
+                  label: "Physician",
                   children: [
                     {
-                      value: "hangzhou",
-                      label: "Hangzhou",
+                      value: "Dr. Tom Hage",
+                      label: "Dr. Tomb Hage",
+                    },
+                    {
+                      value: "Dr. Sneh  Mosby",
+                      label: "Dr. Sneh Tekriwal",
+                    },
+                    {
+                      value: "Dr. Otis Milburn",
+                      label: "Dr. Nuri Dagasan",
+                    },
+                  ],
+                },
+                {
+                  value: "Surgeons",
+                  label: "Surgeons",
+                  children: [
+                    {
+                      value: "Dr. Tom Hage",
+                      label: "Dr. Jake Brigham",
+                    },
+                    {
+                      value: "Dr. Ted Mosby",
+                      label: "Dr. Halden Mosby",
+                    },
+                    {
+                      value: "Dr. Otis Milburn",
+                      label: "Dr. Rome Tara",
+                    },
+                  ],
+                },
+                {
+                  value: "Cardiologist",
+                  label: "Cardiologist",
+                  children: [
+                    {
+                      value: "Dr. Tom Hage",
+                      label: "Dr. Nidhi Ashok",
+                    },
+                    {
+                      value: "Dr. Ted Mosby",
+                      label: "Dr. Mohat Kilgi",
+                    },
+                    {
+                      value: "Dr. Otis Milburn",
+                      label: "Dr. Toh Lage",
                     },
                   ],
                 },
               ]}
             />
           </Form.Item>
-          <Form.Item label="DatePicker">
+          <Form.Item label="Appointment Date">
             <DatePicker />
           </Form.Item>
-          <Form.Item label="InputNumber">
-            <InputNumber />
-          </Form.Item>
-          <Form.Item label="Switch">
+
+          <Form.Item label="Need assistance?">
             <Switch />
           </Form.Item>
-          <Form.Item label="Button">
-            <Popconfirm
-              placement="bottom"
-              title={text}
-              onConfirm={confirm}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button>Book</Button>
-            </Popconfirm>{" "}
-          </Form.Item>
+          <center>
+            <Form.Item>
+              <Popconfirm
+                placement="bottom"
+                title={text}
+                onConfirm={confirm}
+                okText="Yes"
+                cancelText="No"
+              >
+                <Button>Book</Button>
+              </Popconfirm>{" "}
+            </Form.Item>
+          </center>
         </Form>
       </div>
     </UserLayout>

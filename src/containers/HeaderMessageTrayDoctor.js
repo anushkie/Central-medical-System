@@ -109,7 +109,7 @@ const TheHeaderDropdownMssg = () => {
             <div className="pt-3 mr-3 float-left">
               <div className="c-avatar">
                 <CImg
-                  src={"imgs/doc2.jpg"}
+                  src={"imgs/gora.jpg"}
                   className="c-avatar-img"
                   alt="Doctor's image"
                 />

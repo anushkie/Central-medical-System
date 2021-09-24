@@ -27,7 +27,8 @@ const Appointments = () => {
             <th className="text-center">Location Requested</th>
 
             <th className="text-center">Time Slot </th>
-            <th></th>
+            <th className="text-center">Patient Details</th>
+            <th className="text-center">Operation</th>
           </tr>
         </thead>
         <tbody>
@@ -41,7 +42,9 @@ const Appointments = () => {
             <td className="text-center">Clinic-2</td>
             <td className="text-center"> 10:00-11:00</td>
             <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -62,8 +65,10 @@ const Appointments = () => {
             </td>
             <td className="text-center">Clinic-2</td>
             <td className="text-center"> 14:00-15:00</td>
-            <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+            <td className="text-right">
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -85,7 +90,9 @@ const Appointments = () => {
             <td className="text-center">Clinic-1</td>
             <td className="text-center"> 12:00-12:30</td>
             <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -107,7 +114,9 @@ const Appointments = () => {
             <td className="text-center">Clinic-2</td>
             <td className="text-center"> 11:00-12:00</td>
             <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -128,7 +137,9 @@ const Appointments = () => {
             <td className="text-center">Clinic-1</td>
             <td className="text-center"> 18:00-19:00</td>
             <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -149,7 +160,9 @@ const Appointments = () => {
             <td className="text-center">Clinic-2</td>
             <td className="text-center"> 15:00-15:30</td>
             <td className="text-center">
-              <Button type="text"> Patient Details</Button>
+              <Button danger type="text">
+                Click Here for Details
+              </Button>
               <Button type="primary" success>
                 {" "}
                 Accept

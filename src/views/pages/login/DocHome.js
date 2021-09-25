@@ -240,15 +240,15 @@ export default class Demo extends React.PureComponent {
                         <td className="text-center">
                           <div className="c-avatar">
                             <img
-                              src={"imgs/1.jpg"}
+                              src={"imgs/mayank.jpg"}
                               className="c-avatar-img"
-                              alt="shantanu.chaudhary@ecentralhealth.com"
+                              alt="mayank.sharma@ecentralhealth.com"
                             />
                             <span className="c-avatar-status bg-success"></span>
                           </div>
                         </td>
                         <td>
-                          <div>Shantanu Chaudhary</div>
+                          <div>Mayank Sharma</div>
                           <div className="small text-muted">
                             <span>New</span> | Registered: May 13 , 2021
                           </div>
@@ -257,7 +257,7 @@ export default class Demo extends React.PureComponent {
                           <CIcon height={25} name="cif-us" title="us" id="us" />
                         </td>
 
-                        <td className="text-center">Homeopathy</td>
+                        <td className="text-center">Cardiologist</td>
 
                         <td>
                           <div className="small text-muted">Last login</div>

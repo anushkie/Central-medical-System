@@ -49,6 +49,17 @@ const DisplayTable = () => {
   console.log("this is calling yayy");
 };
 const Pharmacy = () => {
+  const [visible1, updateVisibility1] = React.useState(false);
+
+  const hide1 = () => {
+    updateVisibility1(false);
+  };
+
+  const handleVisibleChange1 = (visible1) => {
+    console.log(visible1);
+    updateVisibility1(visible1);
+  };
+
   return (
     <GenericLayout>
       <div className="margin-top w-100 text-center mb-3 ">
@@ -121,22 +132,23 @@ const Pharmacy = () => {
           <Search
             placeholder="Medicine name"
             style={{ width: 200 }}
-            onChange={DisplayTable()}
+            onSearch={() => handleVisibleChange1(true)}
           />
         </Space>
       </div>
-      <Table
-        className="big-size"
-        columns={columns}
-        expandable={{
-          expandedRowRender: (record) => (
-            <p style={{ margin: 0 }}>{record.description}</p>
-          ),
-          rowExpandable: (record) => record.name !== "Not Expandable",
-        }}
-        dataSource={data}
-      />
-      ,
+      {visible1 && (
+        <Table
+          className="big-size"
+          columns={columns}
+          expandable={{
+            expandedRowRender: (record) => (
+              <p style={{ margin: 0 }}>{record.description}</p>
+            ),
+            rowExpandable: (record) => record.name !== "Not Expandable",
+          }}
+          dataSource={data}
+        />
+      )}
     </GenericLayout>
   );
 };

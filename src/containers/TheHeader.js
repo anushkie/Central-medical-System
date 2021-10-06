@@ -206,10 +206,10 @@ const TheHeader = () => {
                 style={{ width: 150 }}
                 onChange={(event) => handleFontChange(event)}
               >
-                <Option value="Arial">Arial</Option>
-                <Option value="Arial">Times New Roman</Option>
-                <Option value="Arial">Comic Sans MS</Option>
-                <Option value="Arial">Georgia</Option>
+                <Option value="arial">Arial</Option>
+                <Option value="times">Times New Roman</Option>
+                <Option value="comic">Comic Sans MS</Option>
+                <Option value="george">Georgia</Option>
               </Select>
             </div>
 

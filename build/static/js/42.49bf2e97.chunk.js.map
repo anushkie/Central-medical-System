@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/Benefits.js"],"names":["Benefits"],"mappings":"yGAAA,uBAMeA,UAJE,WACf,OAAO","file":"static/js/42.49bf2e97.chunk.js","sourcesContent":["import React from \"react\";\r\n\r\nconst Benefits = () => {\r\n  return <>Benefits</>;\r\n};\r\n\r\nexport default Benefits;\r\n"],"sourceRoot":""}

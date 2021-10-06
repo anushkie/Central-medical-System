@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/UserPages/Insurance.js"],"names":["Insurance"],"mappings":"yGAAA,uBAMeA,UAJG,WAChB,OAAO","file":"static/js/55.bc72f472.chunk.js","sourcesContent":["import React from \"react\";\r\n\r\nconst Insurance = () => {\r\n  return <></>;\r\n};\r\n\r\nexport default Insurance;\r\n"],"sourceRoot":""}

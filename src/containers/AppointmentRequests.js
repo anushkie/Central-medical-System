@@ -44,7 +44,9 @@ const Appointments = () => {
             <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -52,7 +54,7 @@ const Appointments = () => {
               <Button type="primary" danger>
                 {" "}
                 Decline
-              </Button>
+              </Button>{" "}
             </td>
           </tr>
 
@@ -65,10 +67,12 @@ const Appointments = () => {
             </td>
             <td className="text-center">Clinic-2</td>
             <td className="text-center"> 14:00-15:00</td>
-            <td className="text-right">
+            <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>{" "}
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -92,7 +96,9 @@ const Appointments = () => {
             <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>{" "}
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -116,7 +122,9 @@ const Appointments = () => {
             <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>{" "}
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -139,7 +147,9 @@ const Appointments = () => {
             <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept
@@ -162,7 +172,9 @@ const Appointments = () => {
             <td className="text-center">
               <Button danger type="text">
                 Click Here for Details
-              </Button>
+              </Button>{" "}
+            </td>
+            <td className="text-center">
               <Button type="primary" success>
                 {" "}
                 Accept

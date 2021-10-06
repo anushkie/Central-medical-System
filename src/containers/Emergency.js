@@ -6,7 +6,6 @@ import { CCard, CCardBody, CCardTitle } from "@coreui/react";
 import { List, Card, Button } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 
 const { Option } = Select;
 const { Search } = Input;
@@ -46,6 +45,7 @@ const Emergency = () => {
   };
 
   const handleVisibleChange1 = (visible1) => {
+    console.log(visible1);
     updateVisibility1(visible1);
   };
 
@@ -78,34 +78,36 @@ const Emergency = () => {
               <Search
                 className="ml-5"
                 placeholder="Enter post code"
-                onSearch={handleVisibleChange1}
+                onSearch={() => handleVisibleChange1(true)}
                 style={{ width: 240 }}
               />
             </div>
           </CCardBody>
         </CCard>
-        <List
-          grid={{
-            gutter: 16,
-            xs: 1,
-            sm: 2,
-            md: 4,
-            lg: 4,
-            xl: 6,
-            xxl: 3,
-          }}
-          dataSource={data}
-          renderItem={(item) => (
-            <div class="card-headcolor">
-              <List.Item>
-                <Card title={item.title}>
-                  Tel: 01234566
-                  <FontAwesomeIcon icon={faPhone} />{" "}
-                </Card>
-              </List.Item>
-            </div>
-          )}
-        />
+        {visible1 && (
+          <List
+            grid={{
+              gutter: 16,
+              xs: 1,
+              sm: 2,
+              md: 4,
+              lg: 4,
+              xl: 6,
+              xxl: 3,
+            }}
+            dataSource={data}
+            renderItem={(item) => (
+              <div class="card-headcolor">
+                <List.Item>
+                  <Card title={item.title}>
+                    Tel: 01234566
+                    <FontAwesomeIcon icon={faPhone} />{" "}
+                  </Card>
+                </List.Item>
+              </div>
+            )}
+          />
+        )}
       </div>
     </TheLayout2>
   );

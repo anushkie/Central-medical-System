@@ -123,13 +123,13 @@ const Login = () => {
                 </CCardBody>
               </CCard>
               <CCard
-                className="big-size text-white bg-warning py-5 d-md-down-none"
+                className="big-size text-white bg-secondary py-5 d-md-down-none"
                 style={{ width: "44%" }}
               >
                 <CCardBody className="text-center">
                   <div>
                     <h2>Sign up</h2>
-                    <p>
+                    <p className="colorWhite">
                       Don't have an account?
                       <AccountBoxIcon /> <ClearIcon />
                     </p>

@@ -1,0 +1,2 @@
+(this.webpackJsonpundefined=this.webpackJsonpundefined||[]).push([[47],{952:function(e,n,s){"use strict";s.r(n);s(0);var t=s(2);n.default=function(){return Object(t.jsx)(t.Fragment,{children:Object(t.jsx)("div",{className:"margin-top",children:"Leaves"})})}}}]);
+//# sourceMappingURL=47.2e0ed4a1.chunk.js.map

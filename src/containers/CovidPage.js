@@ -25,8 +25,8 @@ const CovidPage = ({ match }) => {
                 <p className="lead">
                   COVID-19 is an illness caused by a virus called coronavirus.
                 </p>
-                <hr className="my-2" />
-                <p>
+                <hr className="lead " />
+                <p className="lead">
                   Most people infected with the COVID-19 virus will experience
                   mild to moderate respiratory illness and recover without
                   requiring special treatment. Older people, and those with

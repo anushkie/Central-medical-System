@@ -10,7 +10,7 @@ import {
   CButton,
 } from "@coreui/react";
 
-const RnD = (props) => {
+const RnD = () => {
   const [collapsed, setCollapsed] = React.useState(true);
   const [showCard, setShowCard] = React.useState(true);
 

@@ -10,19 +10,12 @@ import PregnantWomanIcon from "@material-ui/icons/PregnantWoman";
 import { Input } from "antd";
 
 import {
-  CBadge,
-  CButton,
-  CButtonGroup,
-  CCardTitle,
   CCard,
   CCardBody,
-  CCardFooter,
   CCardHeader,
   CCol,
   CProgress,
   CRow,
-  CCallout,
-  CCollapse,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 
@@ -66,6 +59,16 @@ According to the ministry’s announcement dated April 25, the interested privat
 The hospitals considered qualified for the treatment of coronavirus patients are those with adequate location and parking, ambulances with enough medical equipment, appropriate and safe patient rooms, and emergency room with adequate medical materials.`;
 
 const Dashboard = () => {
+  const [vis1, update] = React.useState(false);
+
+  // const hid1 = () => {
+  //   uv1(false);
+  // };
+
+  const hvc1 = (vis1) => {
+    update(vis1);
+  };
+
   const [visible1, updateVisibility1] = React.useState(false);
 
   const hide1 = () => {
@@ -105,6 +108,14 @@ const Dashboard = () => {
   const handleVisibleChange4 = (visible4) => {
     updateVisibility4(visible4);
   };
+  const [visible5, updateVisibility5] = React.useState(false);
+  const hide5 = () => {
+    updateVisibility5(false);
+  };
+
+  const handleVisibleChange5 = (visible4) => {
+    updateVisibility5(visible4);
+  };
 
   return (
     <>
@@ -131,7 +142,7 @@ const Dashboard = () => {
                 className="ml-5"
                 defaultValue="Select a state"
                 style={{ width: 240 }}
-                onChange={handleChange}
+                onChange={hvc1}
               >
                 <Option value="India"> Phnom Penh.</Option>
                 <Option value="Africa"> Banteay Meanchey </Option>
@@ -142,195 +153,197 @@ const Dashboard = () => {
               </Select>
             </div>
           </div>
-          <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-            <thead>
-              <tr>
-                <th className="text-center">
-                  <CIcon name="cil-people" />
-                </th>
-                <th>Doctors</th>
-                <th>Experience </th>
+          {vis1 && (
+            <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+              <thead>
+                <tr>
+                  <th className="text-center">
+                    <CIcon name="cil-people" />
+                  </th>
+                  <th>Doctors</th>
+                  <th>Experience </th>
 
-                <th>Contact </th>
+                  <th>Contact </th>
 
-                <th>Message</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="text-center">
-                  <div className="c-avatar">
-                    <img
-                      src={"imgs/11.jpg"}
-                      className="c-avatar-img"
-                      alt="ayushmann@ecentralhealth.com"
-                    />
-                    <span className="c-avatar-status bg-success"></span>
-                  </div>
-                </td>
-                <th>Ayushmann Khurana</th>
-                <th>5+ </th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="text-center">
+                    <div className="c-avatar">
+                      <img
+                        src={"imgs/11.jpg"}
+                        className="c-avatar-img"
+                        alt="ayushmann@ecentralhealth.com"
+                      />
+                      <span className="c-avatar-status bg-success"></span>
+                    </div>
+                  </td>
+                  <th>Ayushmann Khurana</th>
+                  <th>5+ </th>
 
-                <th>123, c-2 qwerty </th>
+                  <th>123, c-2 qwerty </th>
 
-                <th>
-                  <Popover
-                    content={
-                      <>
-                        <center>
-                          <Input placeholder="Type here.." />
-                          <a color onClick={hide1}>
-                            High BP
-                          </a>{" "}
-                          <a color onClick={hide1}>
-                            Urgent!
-                          </a>{" "}
-                          <a color onClick={hide1}>
-                            Help!
-                          </a>{" "}
-                        </center>
-                      </>
-                    }
-                    title="Message"
-                    trigger="click"
-                    visible={visible1}
-                    onVisibleChange={handleVisibleChange1}
-                  >
-                    <Button type="primary">Click me</Button>
-                  </Popover>
-                </th>
-              </tr>
-              <tr>
-                <td className="text-center">
-                  <div className="c-avatar">
-                    <img
-                      src={"imgs/22.jpg"}
-                      className="c-avatar-img"
-                      alt="shahrukh@ecentralhealth.com"
-                    />
-                    <span className="c-avatar-status bg-success"></span>
-                  </div>
-                </td>
-                <th>Shahrukh Khan</th>
-                <th>10+ </th>
+                  <th>
+                    <Popover
+                      content={
+                        <>
+                          <center>
+                            <Input placeholder="Type here.." />
+                            <a color onClick={hide1}>
+                              High BP
+                            </a>{" "}
+                            <a color onClick={hide1}>
+                              Urgent!
+                            </a>{" "}
+                            <a color onClick={hide1}>
+                              Help!
+                            </a>{" "}
+                          </center>
+                        </>
+                      }
+                      title="Message"
+                      trigger="click"
+                      visible={visible1}
+                      onVisibleChange={handleVisibleChange1}
+                    >
+                      <Button type="primary">Click me</Button>
+                    </Popover>
+                  </th>
+                </tr>
+                <tr>
+                  <td className="text-center">
+                    <div className="c-avatar">
+                      <img
+                        src={"imgs/22.jpg"}
+                        className="c-avatar-img"
+                        alt="shahrukh@ecentralhealth.com"
+                      />
+                      <span className="c-avatar-status bg-success"></span>
+                    </div>
+                  </td>
+                  <th>Shahrukh Khan</th>
+                  <th>10+ </th>
 
-                <th>353, FortHill </th>
+                  <th>353, FortHill </th>
 
-                <th>
-                  <Popover
-                    content={
-                      <>
-                        <center>
-                          <Input placeholder="Type here.." />
-                          <a color onClick={hide2}>
-                            High BP
-                          </a>{" "}
-                          <a color onClick={hide2}>
-                            Urgent!
-                          </a>{" "}
-                          <a color onClick={hide2}>
-                            Help!
-                          </a>{" "}
-                        </center>
-                      </>
-                    }
-                    title="Message"
-                    trigger="click"
-                    visible={visible2}
-                    onVisibleChange={handleVisibleChange2}
-                  >
-                    <Button type="primary">Click me</Button>
-                  </Popover>
-                </th>
-              </tr>
-              <tr>
-                <td className="text-center">
-                  <div className="c-avatar">
-                    <img
-                      src={"imgs/44.jpg"}
-                      className="c-avatar-img"
-                      alt="Madhav@ecentralhealth.com"
-                    />
-                    <span className="c-avatar-status bg-success"></span>
-                  </div>
-                </td>
-                <th>Madhav D'souza</th>
-                <th>2+ </th>
+                  <th>
+                    <Popover
+                      content={
+                        <>
+                          <center>
+                            <Input placeholder="Type here.." />
+                            <a color onClick={hide2}>
+                              High BP
+                            </a>{" "}
+                            <a color onClick={hide2}>
+                              Urgent!
+                            </a>{" "}
+                            <a color onClick={hide2}>
+                              Help!
+                            </a>{" "}
+                          </center>
+                        </>
+                      }
+                      title="Message"
+                      trigger="click"
+                      visible={visible2}
+                      onVisibleChange={handleVisibleChange2}
+                    >
+                      <Button type="primary">Click me</Button>
+                    </Popover>
+                  </th>
+                </tr>
+                <tr>
+                  <td className="text-center">
+                    <div className="c-avatar">
+                      <img
+                        src={"imgs/44.jpg"}
+                        className="c-avatar-img"
+                        alt="Madhav@ecentralhealth.com"
+                      />
+                      <span className="c-avatar-status bg-success"></span>
+                    </div>
+                  </td>
+                  <th>Madhav D'souza</th>
+                  <th>2+ </th>
 
-                <th>98, Chitra Vihar </th>
+                  <th>98, Chitra Vihar </th>
 
-                <th>
-                  <Popover
-                    content={
-                      <>
-                        <center>
-                          <Input placeholder="Type here.." />
-                          <a color onClick={hide3}>
-                            High BP
-                          </a>{" "}
-                          <a color onClick={hide3}>
-                            Urgent!
-                          </a>{" "}
-                          <a color onClick={hide3}>
-                            Help!
-                          </a>{" "}
-                        </center>
-                      </>
-                    }
-                    title="Message"
-                    trigger="click"
-                    visible={visible3}
-                    onVisibleChange={handleVisibleChange3}
-                  >
-                    <Button type="primary">Click me</Button>
-                  </Popover>
-                </th>
-              </tr>
-              <tr>
-                <td className="text-center">
-                  <div className="c-avatar">
-                    <img
-                      src={"imgs/33.jpg"}
-                      className="c-avatar-img"
-                      alt="Kartik@ecentralhealth.com"
-                    />
-                    <span className="c-avatar-status bg-success"></span>
-                  </div>
-                </td>
-                <th>Kartik Aryan Khan</th>
-                <th>7+ </th>
+                  <th>
+                    <Popover
+                      content={
+                        <>
+                          <center>
+                            <Input placeholder="Type here.." />
+                            <a color onClick={hide3}>
+                              High BP
+                            </a>{" "}
+                            <a color onClick={hide3}>
+                              Urgent!
+                            </a>{" "}
+                            <a color onClick={hide3}>
+                              Help!
+                            </a>{" "}
+                          </center>
+                        </>
+                      }
+                      title="Message"
+                      trigger="click"
+                      visible={visible3}
+                      onVisibleChange={handleVisibleChange3}
+                    >
+                      <Button type="primary">Click me</Button>
+                    </Popover>
+                  </th>
+                </tr>
+                <tr>
+                  <td className="text-center">
+                    <div className="c-avatar">
+                      <img
+                        src={"imgs/33.jpg"}
+                        className="c-avatar-img"
+                        alt="Kartik@ecentralhealth.com"
+                      />
+                      <span className="c-avatar-status bg-success"></span>
+                    </div>
+                  </td>
+                  <th>Kartik Aryan Khan</th>
+                  <th>7+ </th>
 
-                <th>15, Angad Nagar </th>
+                  <th>15, Angad Nagar </th>
 
-                <th>
-                  <Popover
-                    content={
-                      <>
-                        <center>
-                          <Input placeholder="Type here.." />
-                          <a color onClick={hide4}>
-                            High BP
-                          </a>{" "}
-                          <a color onClick={hide4}>
-                            Urgent!
-                          </a>{" "}
-                          <a color onClick={hide4}>
-                            Help!
-                          </a>{" "}
-                        </center>
-                      </>
-                    }
-                    title="Message"
-                    trigger="click"
-                    visible={visible4}
-                    onVisibleChange={handleVisibleChange4}
-                  >
-                    <Button type="primary">Click me</Button>
-                  </Popover>
-                </th>
-              </tr>
-            </tbody>
-          </table>
+                  <th>
+                    <Popover
+                      content={
+                        <>
+                          <center>
+                            <Input placeholder="Type here.." />
+                            <a color onClick={hide4}>
+                              High BP
+                            </a>{" "}
+                            <a color onClick={hide4}>
+                              Urgent!
+                            </a>{" "}
+                            <a color onClick={hide4}>
+                              Help!
+                            </a>{" "}
+                          </center>
+                        </>
+                      }
+                      title="Message"
+                      trigger="click"
+                      visible={visible4}
+                      onVisibleChange={handleVisibleChange4}
+                    >
+                      <Button type="primary">Click me</Button>
+                    </Popover>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          )}
         </CCardBody>
       </CCard>
 
@@ -473,7 +486,6 @@ const Dashboard = () => {
               </CRow>
 
               <br />
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -525,13 +537,7 @@ const Dashboard = () => {
                             <center>
                               <Input placeholder="Type here.." />
                               <a color onClick={hide1}>
-                                High BP
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Urgent!
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Help!
+                                Send
                               </a>{" "}
                             </center>
                           </>
@@ -580,22 +586,16 @@ const Dashboard = () => {
                           <>
                             <center>
                               <Input placeholder="Type here.." />
-                              <a color onClick={hide1}>
-                                High BP
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Urgent!
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Help!
+                              <a color onClick={hide2}>
+                                Send
                               </a>{" "}
                             </center>
                           </>
                         }
                         title="Message"
                         trigger="click"
-                        visible={visible1}
-                        onVisibleChange={handleVisibleChange1}
+                        visible={visible2}
+                        onVisibleChange={handleVisibleChange2}
                       >
                         <Button type="primary">Click me</Button>
                       </Popover>
@@ -639,22 +639,16 @@ const Dashboard = () => {
                           <>
                             <center>
                               <Input placeholder="Type here.." />
-                              <a color onClick={hide1}>
-                                High BP
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Urgent!
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Help!
+                              <a color onClick={hide3}>
+                                Send
                               </a>{" "}
                             </center>
                           </>
                         }
                         title="Message"
                         trigger="click"
-                        visible={visible1}
-                        onVisibleChange={handleVisibleChange1}
+                        visible={visible3}
+                        onVisibleChange={handleVisibleChange3}
                       >
                         <Button type="primary">Click me</Button>
                       </Popover>
@@ -696,22 +690,16 @@ const Dashboard = () => {
                           <>
                             <center>
                               <Input placeholder="Type here.." />
-                              <a color onClick={hide1}>
-                                High BP
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Urgent!
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Help!
+                              <a color onClick={hide4}>
+                                Send
                               </a>{" "}
                             </center>
                           </>
                         }
                         title="Message"
                         trigger="click"
-                        visible={visible1}
-                        onVisibleChange={handleVisibleChange1}
+                        visible={visible4}
+                        onVisibleChange={handleVisibleChange4}
                       >
                         <Button type="primary">Click me</Button>
                       </Popover>
@@ -755,22 +743,16 @@ const Dashboard = () => {
                           <>
                             <center>
                               <Input placeholder="Type here.." />
-                              <a color onClick={hide1}>
-                                High BP
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Urgent!
-                              </a>{" "}
-                              <a color onClick={hide1}>
-                                Help!
+                              <a color onClick={hide5}>
+                                Send
                               </a>{" "}
                             </center>
                           </>
                         }
                         title="Message"
                         trigger="click"
-                        visible={visible1}
-                        onVisibleChange={handleVisibleChange1}
+                        visible={visible5}
+                        onVisibleChange={handleVisibleChange5}
                       >
                         <Button type="primary">Click me</Button>
                       </Popover>
@@ -836,26 +818,6 @@ const Dashboard = () => {
                 </div>
 
                 <div className="col-md-6">
-                  {/* <div className="progress-group">
-                    <div className="progress-group-header">
-                      <CIcon
-                        className="progress-group-icon"
-                        name="cil-globe-alt"
-                      />
-                      <span className="title">Organic Search</span>
-                      <span className="ml-auto font-weight-bold">
-                        191,235 <span className="text-muted small">(56%)</span>
-                      </span>
-                    </div>
-                    <div className="progress-group-bars">
-                      <CProgress
-                        className="progress-xs"
-                        color="success"
-                        value="56"
-                      />
-                    </div>
-                  </div> */}
-
                   <div className="progress-group">
                     <div className="progress-group-header">
                       <CIcon
